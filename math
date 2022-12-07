@@ -1,0 +1,22 @@
+for i in range(int(input())):
+    s=input()
+    l=s.split(" ")
+    arr=list(map(lambda x:int(x),l))
+    n,x,c=arr[0],arr[1],arr[2]
+    s=input()
+    l=s.split(" ")
+    arr=list(map(lambda x:int(x),l))
+    arr.sort()
+    op=0
+    for i in range(n):
+        diff=x-arr[i]
+        if diff>c:
+            arr[i]=x
+            op+=1
+        else:
+            break
+    cost=op*c
+    total=sum(arr)
+    ans=total-cost
+    print(ans)
+    
